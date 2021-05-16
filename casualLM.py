@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
+from transformers import BlenderbotTokenizer, BlenderbotForCausalLM
 import discord
 
-mname = 'facebook/blenderbot-400M-distill'
-model = BlenderbotForConditionalGeneration.from_pretrained(mname)
+mname = 'facebook/bart-large'
+model = BlenderbotForCausalLM.from_pretrained(mname, add_cross_attention=False)
 tokenizer = BlenderbotTokenizer.from_pretrained(mname)
 memory = ''
 step = 0
@@ -18,7 +18,7 @@ class MyClient(discord.Client):
 
         if message.author == client.user:
             return
-        if message.channel.id == 843415631244165120 or message.channel.id == 840490174684069938:
+        if message.channel.id == 843415631244165120:
 
             text = message.content
             #print(text)
@@ -30,4 +30,4 @@ class MyClient(discord.Client):
             await message.channel.send(reply)
 
 client = MyClient()
-client.run('ODA3MzUzMzcyNzMwNTg5MTg0.YB2waw.EoOqw7Ff2VElUsFw5kp_-xQeCew')
+client.run('ODQzNDEyOTQ5ODI1ODgwMDk0.YKDfhQ.k-_1kw-P4mRs8uvnY9CrMnB4bpQ')
