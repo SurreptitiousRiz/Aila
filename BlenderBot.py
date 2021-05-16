@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
-import torch
 import discord
-import os
 
 mname = 'facebook/blenderbot-400M-distill'
 model = BlenderbotForConditionalGeneration.from_pretrained(mname).to("cuda")
