@@ -3,7 +3,7 @@ from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
 import discord
 
 mname = 'facebook/blenderbot-400M-distill'
-model = BlenderbotForConditionalGeneration.from_pretrained(mname).to("cuda")
+model = BlenderbotForConditionalGeneration.from_pretrained(mname)
 tokenizer = BlenderbotTokenizer.from_pretrained(mname)
 
 class MyClient(discord.Client):
@@ -17,8 +17,8 @@ class MyClient(discord.Client):
         if message.channel.id == 840490174684069938 or message.channel.id == 843100497488904272:
 
             UTTERANCE = message.content
-            inputs = tokenizer([UTTERANCE], return_tensors='pt').to("cuda")
-            reply_ids = model.generate(**inputs).to("cuda")
+            inputs = tokenizer([UTTERANCE], return_tensors='pt')
+            reply_ids = model.generate(**inputs)
             reply = tokenizer.batch_decode(reply_ids, skip_special_tokens=True)[0]
             print(reply)
             await message.channel.send(reply)
