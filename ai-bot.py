@@ -43,4 +43,4 @@ class MyClient(discord.Client):
             #     chat_ids = None
 
 client = MyClient()
-client.run('ODA3MzUzMzcyNzMwNTg5MTg0.YB2waw.EoOqw7Ff2VElUsFw5kp_-xQeCew')
+client.run('Insert discord token here')
