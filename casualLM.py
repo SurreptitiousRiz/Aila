@@ -30,4 +30,4 @@ class MyClient(discord.Client):
             await message.channel.send(reply)
 
 client = MyClient()
-client.run('ODQzNDEyOTQ5ODI1ODgwMDk0.YKDfhQ.k-_1kw-P4mRs8uvnY9CrMnB4bpQ')
+client.run('Insert discord token here')
